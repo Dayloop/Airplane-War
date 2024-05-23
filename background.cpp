@@ -8,24 +8,19 @@ Background::Background()
     BG_img.load(BG_Path);
 
     // Initialize image position
-    setX(BG_X);
-    setY(BG_Y);
-    setSpeed(BG_Speed);
+    Back_X = BG_X;
+    Back_Y = BG_Y;
+    Back_Speed = BG_Speed;
 
-}
-
-QPixmap Background::getBG_img()
-{
-    return this->BG_img;
 }
 
 void Background::Draw()
 {
     // Update Y position
-    setY(getY() + BG_Speed);
+    Back_Y += Back_Speed;
     /* While background move to the end,
     move it to the top */
-    if (getY() >= 0){
-        setY(BG_Y);
+    if (Back_Y >= 0){
+        Back_Y = BG_Y;
     }
 }

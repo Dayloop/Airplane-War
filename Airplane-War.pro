@@ -11,12 +11,10 @@ CONFIG += c++17
 SOURCES += \
     background.cpp \
     main.cpp \
-    main_form.cpp \
-    root_object.cpp
+    main_form.cpp
 
 HEADERS += \
     Background.h \
-    Root_Object.h \
     config.h \
     main_form.h
 

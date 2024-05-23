@@ -1,6 +1,7 @@
 #include "main_form.h"
 #include "config.h"
 #include <QIcon>
+#include <QPainter>
 
 // Constructor
 Main_Form::Main_Form(QWidget *parent)
@@ -8,6 +9,7 @@ Main_Form::Main_Form(QWidget *parent)
 {
     // Initialize the main form
     initMainForm();
+    Game_Start();
 
 }
 
@@ -25,6 +27,21 @@ void Main_Form::initMainForm()
     setWindowIcon(QIcon(Game_Icon));
     // Set timer interval
     m_Timer.setInterval(UD_Rate);
+}
+
+
+
+void Main_Form::Update_po()
+{
+    BG.Draw();
+}
+
+void Main_Form::paintEvent(QPaintEvent *)
+{
+    // Create a new painter
+    QPainter painter(this);
+    // Draw background
+    painter.drawPixmap(BG_X, BG_Y, BG.BG_img);
 }
 
 

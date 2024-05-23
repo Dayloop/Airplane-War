@@ -2,6 +2,8 @@
 #define MAIN_FORM_H
 
 #include <QWidget>
+#include <QTimer>
+#include "Background.h"
 
 class Main_Form : public QWidget
 {
@@ -9,6 +11,9 @@ class Main_Form : public QWidget
 
 public:
     // Main form constructor
+    // Constructor
+    // Constructor
+    // Constructor
     Main_Form(QWidget *parent = nullptr);
     // Main form destructor
     ~Main_Form();
@@ -16,9 +21,21 @@ public:
     // Main form initializer
     void initMainForm();
 
-    //
+    // Start game
+    void Game_Start();
 
-private:
+    // Update position
+    void Update_po();
+
+    // Draw all the elements
+    void paintEvent(QPaintEvent *);
+
+
+
+    // Background
+    Background BG;
+    // Timer
+    QTimer m_Timer;
 
 
 };
